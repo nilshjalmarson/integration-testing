@@ -10,7 +10,7 @@ public sealed partial class PolicyParityTests(AspireFixture fixture) : IClassFix
     [Theory]
     [InlineData("P-100", "StandardPolicy")]
     [InlineData("P-200", "PendingPolicy")]
-    public async Task Old_and_new_policy_responses_match_for_existing_policies(string policyNumber, string snapshotName)
+    public async Task existing_policy_requests_return_matching_payloads_from_old_and_new_apis(string policyNumber, string snapshotName)
     {
         var cancellationToken = TestContext.Current.CancellationToken;
         using var oldResponse = await fixture.OldApiClient.GetAsync($"/policies/{policyNumber}", cancellationToken);
@@ -23,7 +23,7 @@ public sealed partial class PolicyParityTests(AspireFixture fixture) : IClassFix
     }
 
     [Fact]
-    public async Task Old_and_new_policy_responses_match_for_missing_policy()
+    public async Task missing_policy_requests_return_matching_not_found_payloads_from_old_and_new_apis()
     {
         var cancellationToken = TestContext.Current.CancellationToken;
         using var oldResponse = await fixture.OldApiClient.GetAsync("/policies/P-404", cancellationToken);

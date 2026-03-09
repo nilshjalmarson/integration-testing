@@ -3,7 +3,7 @@ namespace Api.Tests.Tests;
 public class WeatherForecastAuthenticationTests(AspireFixture fixture) : IClassFixture<AspireFixture>
 {
     [Fact]
-    public async Task GetWeatherForecastWithoutTokenReturnsUnauthorized()
+    public async Task weatherforecast_request_without_a_bearer_token_returns_unauthorized()
     {
         // Arrange
         var cancellationToken = TestContext.Current.CancellationToken;
@@ -17,7 +17,7 @@ public class WeatherForecastAuthenticationTests(AspireFixture fixture) : IClassF
     }
 
     [Fact]
-    public async Task GetWeatherForecastWithValidTokenReturnsOk()
+    public async Task weatherforecast_request_with_a_valid_bearer_token_returns_ok()
     {
         // Arrange
         var cancellationToken = TestContext.Current.CancellationToken;
@@ -40,7 +40,7 @@ public class WeatherForecastAuthenticationTests(AspireFixture fixture) : IClassF
     }
 
     [Fact]
-    public async Task GetWeatherForecastWithExpiredTokenReturnsUnauthorized()
+    public async Task weatherforecast_request_with_an_expired_bearer_token_returns_unauthorized()
     {
         // Arrange
         var cancellationToken = TestContext.Current.CancellationToken;

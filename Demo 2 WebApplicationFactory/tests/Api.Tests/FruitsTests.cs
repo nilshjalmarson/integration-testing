@@ -13,7 +13,7 @@ public class FruitsTests(FruitApiFactory factory) : IClassFixture<FruitApiFactor
     ];
 
     [Fact]
-    public async Task GetFruits_WhenDownstreamReturnsOk_ReturnsOk()
+    public async Task fruits_endpoint_returns_ok_and_two_items_when_downstream_service_returns_success()
     {
         // Arrange
         var cancellationToken = TestContext.Current.CancellationToken;
@@ -44,7 +44,7 @@ public class FruitsTests(FruitApiFactory factory) : IClassFixture<FruitApiFactor
     }
 
     [Fact]
-    public async Task GetFruits_WhenDownstreamReturnsError_ReturnsError()
+    public async Task fruits_endpoint_returns_internal_server_error_when_downstream_service_fails()
     {
         // Arrange
         var cancellationToken = TestContext.Current.CancellationToken;
