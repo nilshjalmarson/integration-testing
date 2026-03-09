@@ -1,5 +1,5 @@
 # SUMMARY
-This demo is a simple one just showcasing testing with Aspire. 
+In demo showcases a simple distributed app with an API and a SQL database and how to test it using Aspire.
 
 ## Coverd consepts are:
 * Creating an Aspire test project
