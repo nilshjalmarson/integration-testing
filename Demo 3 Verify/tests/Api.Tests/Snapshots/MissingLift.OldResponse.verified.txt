@@ -8,8 +8,8 @@
       Content-Type: application/json; charset=utf-8
     },
     Value: {
-      message: Policy not found,
-      policyNumber: P-404,
+      message: Lift not found,
+      liftId: 404,
       requestId: Guid_1,
       generatedAt: DateTimeOffset_1
     }

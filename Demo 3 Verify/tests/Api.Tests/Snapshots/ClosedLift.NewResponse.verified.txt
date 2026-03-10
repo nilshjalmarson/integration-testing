@@ -8,11 +8,10 @@
       Content-Type: application/json; charset=utf-8
     },
     Value: {
-      policyNumber: P-100,
-      holder: Ada Lovelace,
-      product: Home,
-      monthlyPremium: 149.5,
-      status: Active,
+      id: 4,
+      name: Chairlift South,
+      status: Closed,
+      waitTimeMinutes: 0,
       requestId: Guid_1,
       generatedAt: DateTimeOffset_1
     }
