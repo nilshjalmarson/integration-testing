@@ -1,9 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Demo1.Api</RootNamespace>
     <UserSecretsId>1cc0bebb-c165-4d8f-871d-23911f9ec696</UserSecretsId>
   </PropertyGroup>
