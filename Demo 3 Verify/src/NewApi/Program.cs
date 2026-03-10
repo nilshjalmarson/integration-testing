@@ -12,45 +12,44 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/policies/{policyNumber}", (string policyNumber) =>
+app.MapGet("/lifts/{liftId:int}", (int liftId) =>
 {
-    if (!PolicyCatalog.TryGetValue(policyNumber, out var policy))
+    if (!LiftCatalog.TryGetValue(liftId, out var lift))
     {
-        return Results.NotFound(new PolicyErrorResponse(
-            "Policy not found",
-            policyNumber,
+        return Results.NotFound(new LiftErrorResponse(
+            "Lift not found",
+            liftId,
             Guid.NewGuid(),
             DateTimeOffset.UtcNow));
     }
 
-    return Results.Ok(new PolicyResponse(
-        policy.PolicyNumber,
-        policy.Holder,
-        policy.Product,
-        policy.MonthlyPremium,
-        policy.Status,
+    return Results.Ok(new LiftResponse(
+        lift.Id,
+        lift.Name,
+        lift.Status,
+        lift.WaitTimeMinutes,
         Guid.NewGuid(),
         DateTimeOffset.UtcNow));
 })
-.WithName("GetPolicy");
+.WithName("GetLift");
 
 app.MapDefaultEndpoints();
 app.Run();
 
 public partial class Program { }
 
-static class PolicyCatalog
+static class LiftCatalog
 {
-    public static readonly IReadOnlyDictionary<string, PolicySnapshot> Policies = new Dictionary<string, PolicySnapshot>(StringComparer.OrdinalIgnoreCase)
+    public static readonly IReadOnlyDictionary<int, LiftSnapshot> Lifts = new Dictionary<int, LiftSnapshot>
     {
-        ["P-100"] = new("P-100", "Ada Lovelace", "Home", 149.50m, "Active"),
-        ["P-200"] = new("P-200", "Grace Hopper", "Travel", 89.00m, "Pending")
+        [1] = new(1, "Gondola A", "Open", 15),
+        [4] = new(4, "Chairlift South", "Closed", 0)
     };
 
-    public static bool TryGetValue(string policyNumber, out PolicySnapshot policy) =>
-        Policies.TryGetValue(policyNumber, out policy!);
+    public static bool TryGetValue(int liftId, out LiftSnapshot lift) =>
+        Lifts.TryGetValue(liftId, out lift!);
 }
 
-record PolicySnapshot(string PolicyNumber, string Holder, string Product, decimal MonthlyPremium, string Status);
-record PolicyResponse(string PolicyNumber, string Holder, string Product, decimal MonthlyPremium, string Status, Guid RequestId, DateTimeOffset GeneratedAt);
-record PolicyErrorResponse(string Message, string PolicyNumber, Guid RequestId, DateTimeOffset GeneratedAt);
+record LiftSnapshot(int Id, string Name, string Status, int WaitTimeMinutes);
+record LiftResponse(int Id, string Name, string Status, int WaitTimeMinutes, Guid RequestId, DateTimeOffset GeneratedAt);
+record LiftErrorResponse(string Message, int LiftId, Guid RequestId, DateTimeOffset GeneratedAt);

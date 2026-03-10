@@ -12,34 +12,32 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/policies/{policyNumber}", (string policyNumber) =>
+app.MapGet("/lifts/{liftId:int}", (int liftId) =>
 {
-    var policies = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase)
+    var lifts = new Dictionary<int, object>
     {
-        ["P-100"] = new
+        [1] = new
         {
-            policyNumber = "P-100",
-            holder = "Ada Lovelace",
-            product = "Home",
-            monthlyPremium = 149.50m,
-            status = "Active"
+            id = 1,
+            name = "Gondola A",
+            status = "Open",
+            waitTimeMinutes = 15
         },
-        ["P-200"] = new
+        [4] = new
         {
-            policyNumber = "P-200",
-            holder = "Grace Hopper",
-            product = "Travel",
-            monthlyPremium = 89.00m,
-            status = "Pending"
+            id = 4,
+            name = "Chairlift South",
+            status = "Closed",
+            waitTimeMinutes = 0
         }
     };
 
-    if (!policies.TryGetValue(policyNumber, out var policy))
+    if (!lifts.TryGetValue(liftId, out var lift))
     {
         return Results.NotFound(new
         {
-            message = "Policy not found",
-            policyNumber,
+            message = "Lift not found",
+            liftId,
             requestId = Guid.NewGuid(),
             generatedAt = DateTimeOffset.UtcNow
         });
@@ -47,16 +45,15 @@ app.MapGet("/policies/{policyNumber}", (string policyNumber) =>
 
     return Results.Ok(new
     {
-        policyNumber = policyNumber,
-        holder = policy.GetType().GetProperty("holder")!.GetValue(policy),
-        product = policy.GetType().GetProperty("product")!.GetValue(policy),
-        monthlyPremium = policy.GetType().GetProperty("monthlyPremium")!.GetValue(policy),
-        status = policy.GetType().GetProperty("status")!.GetValue(policy),
+        id = lift.GetType().GetProperty("id")!.GetValue(lift),
+        name = lift.GetType().GetProperty("name")!.GetValue(lift),
+        status = lift.GetType().GetProperty("status")!.GetValue(lift),
+        waitTimeMinutes = lift.GetType().GetProperty("waitTimeMinutes")!.GetValue(lift),
         requestId = Guid.NewGuid(),
         generatedAt = DateTimeOffset.UtcNow
     });
 })
-.WithName("GetPolicy");
+.WithName("GetLift");
 
 app.MapDefaultEndpoints();
 app.Run();
