@@ -6,7 +6,7 @@ using WireMock.Net.Testcontainers;
 
 namespace Api.Tests;
 
-public class FruitApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
+public class WeatherApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private WireMockContainer? _wireMockContainer;
 
@@ -26,7 +26,7 @@ public class FruitApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        builder.UseSetting("FruitApi:BaseUrl", _wireMockContainer!.GetPublicUrl());
+        builder.UseSetting("WeatherApi:BaseUrl", _wireMockContainer!.GetPublicUrl());
     }
 
     public new async ValueTask DisposeAsync()
