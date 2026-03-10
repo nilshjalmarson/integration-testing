@@ -1,6 +1,6 @@
 @OldApi_HostAddress = http://localhost:5165
 
-GET {{OldApi_HostAddress}}/weatherforecast/
+GET {{OldApi_HostAddress}}/lifts/1
 Accept: application/json
 
 ###
