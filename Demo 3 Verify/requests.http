@@ -1,2 +1,4 @@
-GET https://localhost:7220/lifts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwic3ViIjoidGVzdHVzZXIiLCJqdGkiOiJjMDRkODRhMyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjUwMjAiLCJodHRwczovL2xvY2FsaG9zdDo3MjIwIl0sIm5iZiI6MTc3MjQ4NzE4MywiZXhwIjoxNzgwNDM1OTgzLCJpYXQiOjE3NzI0ODcxODQsImlzcyI6ImRvdG5ldC11c2VyLWp3dHMifQ.G03s-EOxwXw-uT6inqezbFLBrgnHpE-gLUn3RYARA0c
+GET https://localhost:7157/lifts/4
+
+###
+GET https://localhost:7052/lifts/4
