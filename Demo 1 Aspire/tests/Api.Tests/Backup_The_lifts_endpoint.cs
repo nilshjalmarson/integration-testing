@@ -1,4 +1,4 @@
-namespace Api.Tests.Tests;
+namespace Demo1.Api.Tests;
 
 public class Backup_The_lifts_endpoint(AspireFixture fixture) : IClassFixture<AspireFixture>
 {
@@ -29,13 +29,7 @@ public class Backup_The_lifts_endpoint(AspireFixture fixture) : IClassFixture<As
         
         using var response = await httpClient.GetAsync("/lifts", cancellationToken);
 
-        // Assert
-        if (response.StatusCode != HttpStatusCode.OK)
-        {
-            var wwwAuth = response.Headers.WwwAuthenticate.ToString();
-            var body = await response.Content.ReadAsStringAsync(cancellationToken);
-            throw new Xunit.Sdk.XunitException($"Expected 200 OK but got {response.StatusCode}. WWW-Authenticate: {wwwAuth}. Body: {body}");
-        }
+        // Assert        
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 

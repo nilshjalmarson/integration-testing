@@ -5,8 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>    
     <OutputType>Exe</OutputType>
-    <UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
-    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <RootNamespace>Demo1.Api.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
