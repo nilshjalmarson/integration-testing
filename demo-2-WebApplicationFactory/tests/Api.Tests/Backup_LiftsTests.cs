@@ -4,7 +4,7 @@ using WireMock.Client.Extensions;
 
 namespace Demo2.Api.Tests;
 
-public class LiftsTests(WeatherApiFactory factory) : IClassFixture<WeatherApiFactory>
+public class Backup_LiftsTests(WeatherApiFactory factory) : IClassFixture<WeatherApiFactory>
 {
     private const string CurrentWeatherPath = "/v1/forecast";
 

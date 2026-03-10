@@ -4,9 +4,6 @@ namespace Demo3.Api.Tests;
 
 public sealed partial class LiftParityTests(AspireFixture fixture) : IClassFixture<AspireFixture>
 {
-    private static readonly Regex GuidRegex = GuidPattern();
-    private static readonly Regex TimestampRegex = TimestampPattern();
-
     [Theory]
     [InlineData(1, "OpenLift")]
     [InlineData(4, "ClosedLift")]
@@ -41,25 +38,12 @@ public sealed partial class LiftParityTests(AspireFixture fixture) : IClassFixtu
         settings.UseDirectory("Snapshots");
         settings.AutoVerify();
         settings.DisableRequireUniquePrefix();
-        settings.ScrubHttpTextResponse(ScrubDynamicValues);
+        settings.ScrubGuids();
+        settings.ScrubDateTimes();
 
-        var verifyResult = await Verify(response, settings)
-            .DontScrubDateTimes()
+        var verifyResult = await Verify(response, settings)            
             .UseFileName(snapshotName);
 
         return verifyResult.Text;
     }
-
-    private static string ScrubDynamicValues(string text)
-    {
-        text = GuidRegex.Replace(text, "Guid_1");
-        text = TimestampRegex.Replace(text, "DateTimeOffset_1");
-        return text;
-    }
-
-    [GeneratedRegex(@"\b[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}\b", RegexOptions.CultureInvariant)]
-    private static partial Regex GuidPattern();
-
-    [GeneratedRegex(@"\b\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+\-]\d{2}:\d{2})\b", RegexOptions.CultureInvariant)]
-    private static partial Regex TimestampPattern();
 }
