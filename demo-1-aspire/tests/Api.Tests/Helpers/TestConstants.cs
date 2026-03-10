@@ -20,5 +20,5 @@ public static class TestConstants
     /// <summary>
     /// The JWT audience used in tests. Must match a valid audience in the API.
     /// </summary>
-    public const string JwtAudience = "http://localhost:5020";
+    public const string JwtAudience = "https://localhost:7220";
 }
