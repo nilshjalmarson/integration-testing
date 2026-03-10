@@ -1,7 +1,7 @@
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
 
-namespace Api.Weather;
+namespace Demo2.Api.Weather;
 
 public class WeatherClient(HttpClient httpClient)
 {

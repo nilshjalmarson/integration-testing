@@ -2,7 +2,7 @@ using System.Text.Json;
 using WireMock.Admin.Mappings;
 using WireMock.Client.Extensions;
 
-namespace Api.Tests;
+namespace Demo2.Api.Tests;
 
 public class LiftsTests(WeatherApiFactory factory) : IClassFixture<WeatherApiFactory>
 {

@@ -1,4 +1,4 @@
-namespace Api.Models;
+namespace Demo2.Api.Models;
 
 public class Lift
 {

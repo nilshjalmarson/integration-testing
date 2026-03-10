@@ -5,6 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>Demo1.AppHost</RootNamespace>
     <UserSecretsId>aee7948c-f975-4912-854d-976cf094ee33</UserSecretsId>
   </PropertyGroup>
 

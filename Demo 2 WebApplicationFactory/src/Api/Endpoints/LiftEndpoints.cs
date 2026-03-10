@@ -1,7 +1,7 @@
-using Api.Data;
-using Api.Weather;
+using Demo2.Api.Data;
+using Demo2.Api.Weather;
 
-namespace Api.Endpoints;
+namespace Demo2.Api.Endpoints;
 
 public static class LiftEndpoints
 {

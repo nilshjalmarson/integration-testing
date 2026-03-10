@@ -4,7 +4,7 @@ using WireMock.Client;
 using WireMock.Client.Extensions;
 using WireMock.Net.Testcontainers;
 
-namespace Api.Tests;
+namespace Demo2.Api.Tests;
 
 public class WeatherApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {

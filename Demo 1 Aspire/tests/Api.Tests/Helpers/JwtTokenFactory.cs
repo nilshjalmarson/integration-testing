@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Api.Tests;
+namespace Demo1.Api.Tests;
 
 /// <summary>
 /// Factory for creating JWT tokens in integration tests.

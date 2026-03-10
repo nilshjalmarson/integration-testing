@@ -1,4 +1,4 @@
-namespace Api.Tests;
+namespace Demo1.Api.Tests;
 
 /// <summary>
 /// Shared constants used across test infrastructure and the API.

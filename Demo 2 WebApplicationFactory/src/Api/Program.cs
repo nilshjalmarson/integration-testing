@@ -1,6 +1,6 @@
-using Api.Data;
-using Api.Endpoints;
-using Api.Weather;
+using Demo2.Api.Data;
+using Demo2.Api.Endpoints;
+using Demo2.Api.Weather;
 
 var builder = WebApplication.CreateBuilder(args);
 

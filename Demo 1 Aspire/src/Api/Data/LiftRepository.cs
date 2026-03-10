@@ -1,9 +1,9 @@
 using System.Data;
-using Api.Models;
+using Demo1.Api.Models;
 using Dapper;
 using Microsoft.Data.SqlClient;
 
-namespace Api.Data;
+namespace Demo1.Api.Data;
 
 public class LiftRepository
 {

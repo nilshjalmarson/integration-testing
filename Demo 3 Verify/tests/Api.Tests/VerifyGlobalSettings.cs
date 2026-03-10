@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using DiffEngine;
 
-namespace Api.Tests;
+namespace Demo3.Api.Tests;
 
 public static class VerifyGlobalSettings
 {

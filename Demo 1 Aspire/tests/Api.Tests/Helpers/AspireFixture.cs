@@ -1,6 +1,6 @@
 using Aspire.Hosting.Testing;
 
-namespace Api.Tests;
+namespace Demo1.Api.Tests;
 
 public class AspireFixture : IAsyncLifetime
 {

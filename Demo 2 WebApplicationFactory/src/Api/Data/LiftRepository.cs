@@ -1,6 +1,6 @@
-using Api.Models;
+using Demo2.Api.Models;
 
-namespace Api.Data;
+namespace Demo2.Api.Data;
 
 public class LiftRepository
 {

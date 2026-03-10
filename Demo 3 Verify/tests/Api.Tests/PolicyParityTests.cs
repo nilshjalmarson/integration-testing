@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace Api.Tests;
+namespace Demo3.Api.Tests;
 
 public sealed partial class PolicyParityTests(AspireFixture fixture) : IClassFixture<AspireFixture>
 {

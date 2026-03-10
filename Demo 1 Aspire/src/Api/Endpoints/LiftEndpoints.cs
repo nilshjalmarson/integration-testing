@@ -1,6 +1,6 @@
-using Api.Data;
+using Demo1.Api.Data;
 
-namespace Api.Endpoints;
+namespace Demo1.Api.Endpoints;
 
 public static class LiftEndpoints
 {

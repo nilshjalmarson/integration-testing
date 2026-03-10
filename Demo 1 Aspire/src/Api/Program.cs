@@ -1,5 +1,5 @@
-using Api.Data;
-using Api.Endpoints;
+using Demo1.Api.Data;
+using Demo1.Api.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 

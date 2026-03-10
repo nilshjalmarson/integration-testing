@@ -1,7 +1,7 @@
 using Aspire.Hosting;
 using Aspire.Hosting.Testing;
 
-namespace Api.Tests;
+namespace Demo3.Api.Tests;
 
 public sealed class AspireFixture : IAsyncLifetime
 {
