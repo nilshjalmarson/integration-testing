@@ -12,7 +12,7 @@ public static class VerifyGlobalSettings
         VerifierSettings.IgnoreMember("Content-Length");
         VerifierSettings.IgnoreMember("Date");
         VerifierSettings.IgnoreMember("Server");
-        VerifyHttp.Initialize();
+        VerifyHttp.Initialize();        
         DiffTools.UseOrder(DiffTool.VisualStudioCode);
     }
 }

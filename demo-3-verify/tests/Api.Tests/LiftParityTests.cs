@@ -41,7 +41,7 @@ public sealed partial class LiftParityTests(AspireFixture fixture) : IClassFixtu
         settings.ScrubGuids();
         settings.ScrubDateTimes();
 
-        var verifyResult = await Verify(response, settings)            
+        var verifyResult = await Verify(response, settings)
             .UseFileName(snapshotName);
 
         return verifyResult.Text;
