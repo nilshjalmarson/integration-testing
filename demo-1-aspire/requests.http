@@ -1,6 +1,2 @@
 GET https://localhost:7220/lifts
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InRlc3R1c2VyIiwic3ViIjoidGVzdHVzZXIiLCJqdGkiOiJhZjIxMDBhNyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcyMjAiLCJuYmYiOjE3NzMyMTM5MDgsImV4cCI6MTc4MTE2MjcwOCwiaWF0IjoxNzczMjEzOTA4LCJpc3MiOiJkb3RuZXQtdXNlci1qd3RzIn0.HQucQCQWiGGxqA9Sebkq9M39QklgBh_tYpsr15VNAEE
-
-
-// dotnet user-jwts create --name testuser --project ./src/Api/Api.csproj
