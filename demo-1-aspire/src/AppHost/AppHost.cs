@@ -1,6 +1,6 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sql = builder.AddSqlServer("sql");
+var sql = builder.AddSqlServer("sql").WithLifetime(ContainerLifetime.Persistent);
 
 var skiresort = sql.AddDatabase("skiresort")
     .WithCreationScript("""

@@ -1,4 +1,4 @@
-GET https://localhost:7220/lifts
+GET https://localhost:7221/lifts
 
 ###
-GET https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m
+GET https://api.open-meteo.com/v1/forecast?latitude=62.48288294987562&longitude=13.975505405373696&hourly=temperature_2m

@@ -7,8 +7,7 @@ public static class LiftEndpoints
     public static void MapLiftEndpoints(this WebApplication app)
     {
         app.MapGet("/lifts", GetAllLifts)
-            .WithName("GetLifts")
-            .RequireAuthorization();
+            .WithName("GetLifts");
     }
 
     private static async Task<IEnumerable<object>> GetAllLifts(LiftRepository repository)

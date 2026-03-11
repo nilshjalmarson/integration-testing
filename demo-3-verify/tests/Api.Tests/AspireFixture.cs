@@ -9,10 +9,10 @@ public sealed class AspireFixture : IAsyncLifetime
 
     private DistributedApplication? _app;
 
-    public HttpClient OldApiClient => _app?.CreateHttpClient("old", "https")
+    public HttpClient OldApiClient => _app?.CreateHttpClient("old")
         ?? throw new InvalidOperationException("App has not been initialized.");
 
-    public HttpClient NewApiClient => _app?.CreateHttpClient("new", "https")
+    public HttpClient NewApiClient => _app?.CreateHttpClient("new")
         ?? throw new InvalidOperationException("App has not been initialized.");
 
     public async ValueTask InitializeAsync()

@@ -5,7 +5,7 @@ namespace Demo2.Api.Weather;
 
 public class WeatherClient(HttpClient httpClient)
 {
-    private const string VemdalsskaletCurrentWeatherPath = "/v1/forecast?latitude=62.4083&longitude=13.8612&current=temperature_2m&timezone=Europe%2FStockholm";
+    private const string VemdalsskaletCurrentWeatherPath = "/v1/forecast?latitude=62.48288294987562&longitude=13.975505405373696&hourly=temperature_2m";
 
     public async Task<double?> GetCurrentTemperatureCelsius(CancellationToken cancellationToken)
     {
