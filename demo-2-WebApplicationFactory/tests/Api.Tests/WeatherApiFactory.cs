@@ -10,7 +10,7 @@ public class WeatherApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
     private WireMockContainer? _wireMockContainer;
 
-    public IWireMockAdminApi AdminClient => _wireMockContainer!.CreateWireMockAdminClient();
+    public IWireMockAdminApi AdminClient { get; private set; } = null!;
 
     public async ValueTask InitializeAsync()
     {
@@ -19,6 +19,8 @@ public class WeatherApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
             .Build();
 
         await _wireMockContainer.StartAsync();
+
+        AdminClient = _wireMockContainer.CreateWireMockAdminClient();
 
         // Wait for WireMock to be ready
         await AdminClient.WaitForHealthAsync();
